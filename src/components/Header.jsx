@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { BsMoonStarsFill, BsMoonStars } from "react-icons/bs";
 import { Container } from "./Container";
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 const HeaderEl = styled.header`
   box-shadow: var(--shadow);
   background-color: var(--color-ui-base);
@@ -13,8 +13,8 @@ const Wrapper = styled.div`
   align-items: center;
   padding: 2rem 0;
 `;
-const Title = styled.a.attrs({
-  href: "/",
+const Title = styled(Link).attrs({
+  to: "/",
 })`
   color: var(--text-color);
   font-size: var(--fsz-sm);
