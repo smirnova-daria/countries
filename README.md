@@ -1,4 +1,4 @@
-# [Приложение "Страны"] (https://countries-psi-sooty.vercel.app/)
+# [Приложение "Страны"](https://countries-psi-sooty.vercel.app/)
 
 ![](countries.gif)
 
