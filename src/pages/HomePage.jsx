@@ -5,10 +5,12 @@ import { ALL_COUNTRIES } from "../api/config";
 import { Controls } from "../components/Controls";
 import { List } from "../components/List";
 import { Card } from "../components/Card";
+import { Preloader } from "../components/Preloader";
 
 export const HomePage = ({ countries, setCountries }) => {
   const navigate = useNavigate();
   const [filteredCountries, setfilteredCountries] = useState(countries);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSearch = (search, region) => {
     let data = [...countries];
@@ -25,8 +27,10 @@ export const HomePage = ({ countries, setCountries }) => {
 
   useEffect(() => {
     if (!countries.length) {
+      setIsLoading(true);
       axios.get(ALL_COUNTRIES).then(({ data }) => {
         setCountries(data);
+        setIsLoading(false);
       });
     }
   }, []);
@@ -35,6 +39,9 @@ export const HomePage = ({ countries, setCountries }) => {
     handleSearch();
   }, [countries]);
 
+  if (isLoading) {
+    return <Preloader />;
+  }
   return (
     <>
       <Controls onSearch={handleSearch} />
@@ -66,7 +73,7 @@ export const HomePage = ({ countries, setCountries }) => {
             />
           );
         })}
-      </List>
+      </List>{" "}
     </>
   );
 };
