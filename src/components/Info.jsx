@@ -105,6 +105,14 @@ export const Info = (props) => {
     }
   }, [borders]);
 
+  const list1Options = [
+    { option: "Native Name:", value: nativeName },
+    { option: "Population:", value: population },
+    { option: "Region:", value: region },
+    { option: "Sub Region:", value: subregion },
+    { option: "Capital:", value: capital },
+  ];
+
   return (
     <Wrapper>
       <InfoImage src={flag} alt={name} />
@@ -112,26 +120,11 @@ export const Info = (props) => {
         <InfoTitle>{name}</InfoTitle>
         <ListGroup>
           <List>
-            <ListItem>
-              <b>Native Name: </b>
-              {nativeName}
-            </ListItem>
-            <ListItem>
-              <b>Population: </b>
-              {population}
-            </ListItem>
-            <ListItem>
-              <b>Region: </b>
-              {region}
-            </ListItem>
-            <ListItem>
-              <b>Sub Region: </b>
-              {subregion}
-            </ListItem>
-            <ListItem>
-              <b>Capital: </b>
-              {capital}
-            </ListItem>
+            {list1Options.map((o) => (
+              <ListItem key={o.option}>
+                <b>{o.option}</b> {o.value}
+              </ListItem>
+            ))}
           </List>
           <List>
             <ListItem>
