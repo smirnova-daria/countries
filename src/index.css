@@ -24,18 +24,12 @@ body[data-theme="light"] {
   --color-ui-base: #ffffff;
   --shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
 }
-/* body[data-theme="light"] #loader {
-  background-image: url(./assets/loader-light.gif);
-} */
 body[data-theme="dark"] {
   --text-color: #ffffff;
   --bg-color: #202c37;
   --color-ui-base: #2b3945;
   --shadow: rgba(245, 245, 245, 0.2) 0 0 8px;
 }
-/* body[data-theme="dark"] #loader {
-  background-image: url(./assets/loader-dark.gif);
-} */
 
 body {
   margin: 0;

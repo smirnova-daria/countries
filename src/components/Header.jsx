@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
 `;
 const Title = styled(Link).attrs({
   to: "/",
@@ -21,12 +21,19 @@ const Title = styled(Link).attrs({
   text-decoration: none;
   font-weight: var(--fw-bold);
 `;
-const ThemeSwitcher = styled.div`
-  color: var(--text-color);
-  font-size: var(--fsz-sm);
+const ThemeSwitcher = styled.button`
   cursor: pointer;
-  font-weight: var(--fw-bold);
-  text-transform: capitalize;
+  border: none;
+  background-color: transparent;
+  color: var(--text-color);
+  box-shadow: var(--shadow);
+  height: 40px;
+  width: 40px;
+  border: 1px solid #ececec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 `;
 
 export const Header = () => {
@@ -49,7 +56,6 @@ export const Header = () => {
             ) : (
               <BsMoonStarsFill size="14px" />
             )}
-            <span style={{ marginLeft: "0.75rem" }}>{theme} theme</span>
           </ThemeSwitcher>
         </Wrapper>
       </Container>

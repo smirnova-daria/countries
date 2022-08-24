@@ -16,6 +16,7 @@ export const CustomSelect = styled(Select).attrs({
     option: (provided, state) => ({
       ...provided,
       cursor: "pointer",
+      paddingLeft: "1rem",
       color: "var(--text-color)",
       backgroundColor: state.isSelected
         ? "var(--bg-color)"
